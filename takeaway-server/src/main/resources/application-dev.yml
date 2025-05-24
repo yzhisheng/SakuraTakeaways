@@ -6,3 +6,6 @@ sky:
     database: sakura_takeaway
     username: root
     password: Sakura@Eva@Root
+  wechat:
+    appid: wx147b8fb5cc7536dc
+    secret: 55ceac6868deff5bbd06b8b6e44247d3
