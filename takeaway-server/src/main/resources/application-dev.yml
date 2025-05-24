@@ -1,0 +1,8 @@
+sky:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: xxx.xxx.xxx.xxx
+    port: 3306
+    database: sakura_takeaway
+    username: root
+    password: Sakura@Eva@Root
