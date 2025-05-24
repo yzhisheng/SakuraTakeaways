@@ -2,6 +2,7 @@ package com.sakura.takeaway.mapper;
 
 
 import com.github.pagehelper.Page;
+import com.sakura.takeaway.annotation.AutoFill;
 import com.sakura.takeaway.dto.SetmealPageQueryDTO;
 import com.sakura.takeaway.entity.Setmeal;
 import com.sakura.takeaway.enumeration.OperationType;

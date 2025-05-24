@@ -1,6 +1,9 @@
 package com.sakura.takeaway.mapper;
 
 
+import com.github.pagehelper.Page;
+import com.sakura.takeaway.dto.GoodsSalesDTO;
+import com.sakura.takeaway.dto.OrdersPageQueryDTO;
 import com.sakura.takeaway.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -81,5 +84,5 @@ public interface OrderMapper {
      * @param end
      * @return
      */
-    List<GoodsSalesDTO> getSalesTop10(LocalDateTime begin,LocalDateTime end);
+    List<GoodsSalesDTO> getSalesTop10(LocalDateTime begin, LocalDateTime end);
 }
