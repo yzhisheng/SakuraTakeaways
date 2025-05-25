@@ -9,3 +9,20 @@ sky:
   wechat:
     appid: wx147b8fb5cc7536dc
     secret: 55ceac6868deff5bbd06b8b6e44247d3
+    mchid: 1561414331
+    mchSerialNo: 4B3B3DC35414AD50B1B755BAF8DE9CC7CF407606
+    privateKeyFilePath: D:\pay\apiclient_key.pem
+    apiV3Key: CZBK51236435wxpay435434323FFDuv3
+    weChatPayCertFilePath: D:\pay\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
+    notifyUrl: https://58869fb.r2.cpolar.top/notify/paySuccess
+    refundNotifyUrl: https://58869fb.r2.cpolar.top/notify/refundSuccess
+  redis:
+    host: xxx.xxx.xxx.xxx
+    port: 6379
+    password: Sakura@Redis
+    database: 10
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: your-access-key-id
+    access-key-secret: your-access-key-secret
+    bucket-name: your-bucket-name
