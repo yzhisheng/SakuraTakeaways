@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController("userShopController")
 @RequestMapping("/user/shop")
 @Api(tags = "店铺相关接口")
@@ -30,7 +32,19 @@ public class ShopController {
     @ApiOperation("获取店铺的营业状态")
     public Result<Integer> getStatus(){
         Integer status = (Integer) redisTemplate.opsForValue().get(KEY);
-        log.info("获取到店铺的营业状态为：{}",status == 1 ? "营业中" : "打烊中");
-        return Result.success(status);
+        // 使用 Optional 优雅处理 null
+        Optional<Integer> statusOptional = Optional.ofNullable(status);
+
+        if (statusOptional.isPresent()) {  // 检查状态是否存在
+            Integer actualStatus = statusOptional.get();
+            // 记录状态信息（假设 1=营业，其他值=打烊）
+            String statusDesc = actualStatus == 1 ? "营业中" : "打烊中";
+            log.info("获取到店铺的营业状态为：{}", statusDesc);
+            return Result.success(actualStatus);
+        } else {
+            // 处理状态不存在的情况（例如未初始化状态）
+            log.warn("未查询到店铺营业状态，KEY: {}", KEY);
+            return Result.success(1);
+        }
     }
 }
